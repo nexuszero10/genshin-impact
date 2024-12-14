@@ -5,7 +5,7 @@ class User extends Controller
     public function login()
     {
         $data['file'] = 'user/login';
-        $data['title'] = 'Login - Bioskop Athena';
+        $data['title'] = 'Login - Genshin Simulation';
         $data['error-login'] = null;
         $this->view('user/login', $data);
     }
@@ -13,7 +13,7 @@ class User extends Controller
     public function register()
     {
         $data['file'] = 'user/register';
-        $data['title'] = 'Register - Bioskop Athena';
+        $data['title'] = 'Register - Genshin Simulation';
         $data['error-register'] = null;
         $this->view('user/register', $data);
     }
@@ -22,7 +22,7 @@ class User extends Controller
     {
         if ($_POST['password'] !== $_POST['password2']) {
             $data['file'] = 'user/register';
-            $data['title'] = 'Register - Bioskop Athena';
+            $data['title'] = 'Register - Genshin Simulation';
             $data['error-register'] = 'Password harus sama!';
             $this->view('user/register', $data);
             return;
@@ -30,12 +30,12 @@ class User extends Controller
 
         if ($this->model('User_model')->tambahDataRegistrasi($_POST) > 0) {
             $data['file'] = 'user/register';
-            $data['title'] = 'Register - Bioskop Athena';
+            $data['title'] = 'Register - Genshin Simulation';
             $data['success-register'] = 'Registrasi sukses silahkan login!';
             $this->view('user/register', $data);
         } else {
             $data['file'] = 'user/register';
-            $data['title'] = 'Register - Bioskop Athena';
+            $data['title'] = 'Register - Genshin Simulation';
             $data['error-register'] = 'Username sudah terdaftar!';
             $this->view('user/register', $data);
         }
@@ -58,12 +58,12 @@ class User extends Controller
                 }
 
                 $data['file'] = 'user/login';
-                $data['title'] = 'Login - Bioskop Athena';
+                $data['title'] = 'Login - Genshin Simulation';
                 $data['success-login'] = "Login sukses!";
                 $this->view('user/login', $data);
             } else {
                 $data['file'] = 'user/login';
-                $data['title'] = 'Login - Bioskop Athena';
+                $data['title'] = 'Login - Genshin Simulation';
 
                 if ($loginResult == -1) {
                     $data['error-login'] = "Username tidak ditemukan!";
@@ -76,7 +76,7 @@ class User extends Controller
             }
         } else {
             $data['file'] = 'user/login';
-            $data['title'] = 'Login - Bioskop Athena';
+            $data['title'] = 'Login - Genshin Simulation';
             $this->view('user/login', $data);
         }
     }
